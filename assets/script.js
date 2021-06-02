@@ -3,8 +3,7 @@
    $("#currentDay").text(currentDay);
    // Change the backgroundcolor based on the time of day
    const backgroundColor = () =>{
-      let currentTime = moment().format("hh:mm");
-   
+      let currentTime = moment().format("H");
       let timeSlot = [];
       let hourIds = document.querySelectorAll('#box div');
       for(var i=0; i < hourIds.length; i++){
@@ -24,11 +23,10 @@
       }
       backgroundColor();
 // Post to local storage when user hits save button
- $(".saveBtn").click(function(){
-    let hour = $(this).sibling(".description").val;
-    let task = $(this).parent.attr("id");
-
-localStorage.setItem(hour, task);
+ $(".saveBtn").on('click', function(){
+    let task = $(this).sibling(".description").val;
+    let hour = $(this).parent.attr("id");
+   localStorage.setItem(hour, task);
    });
 // Recall from local storage when page is reloaded
 $('#9 .description').val(localStorage.getItem('#9'));
