@@ -24,8 +24,8 @@
          $(".description").removeClass('future');
          $('.description').addClass("present");
       }}
-      console.log(timeSlot); 
-      console.log(currentTime);
+      // console.log(timeSlot); 
+      // console.log(currentTime);
    }
       backgroundColor();
 // Post to local storage when user hits save button
@@ -33,16 +33,18 @@
     let task = $(this).siblings(".description").val();
     let hour = $(this).parent().attr("id");
    localStorage.setItem(hour, task);
-   console.log(task);
-   });
+   event.preventDefault();
+   // console.log(task);
+   
   
 // Recall from local storage when page is reloaded
-$('#9 .description').val(localStorage.getItem('#9'));
-$('#10 .description').val(localStorage.getItem('#10'));
-$('#11 .description').val(localStorage.getItem('#11'));
-$('#12 .description').val(localStorage.getItem('#12'));
-$('#13 .description').val(localStorage.getItem('#13'));
-$('#14 .description').val(localStorage.getItem('#14'));
-$('#15 .description').val(localStorage.getItem('#15'));
-$('#16 .description').val(localStorage.getItem('#16'));
-$('#17 .description').val(localStorage.getItem('#17'));
+$('#9 .description').val(localStorage.getItem('9', task));
+$('#10 .description').val(localStorage.getItem('10', task));
+$('#11 .description').val(localStorage.getItem('11', task));
+$('#12 .description').val(localStorage.getItem('12', task));
+$('#13 .description').val(localStorage.getItem('13', task));
+$('#14 .description').val(localStorage.getItem('14', task));
+$('#15 .description').val(localStorage.getItem('15', task));
+$('#16 .description').val(localStorage.getItem('16', task));
+$('#17 .description').val(localStorage.getItem('17', task));
+});
