@@ -38,7 +38,7 @@
    
   
 // Recall from local storage when page is reloaded
-$('#9 .description').val(localStorage.getItem('9', task));
+$(timeSlot[0).val(localStorage.getItem(hour, task));
 $('#10 .description').val(localStorage.getItem('10', task));
 $('#11 .description').val(localStorage.getItem('11', task));
 $('#12 .description').val(localStorage.getItem('12', task));
